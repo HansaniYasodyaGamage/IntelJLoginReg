@@ -55,9 +55,16 @@ public class RegistrationForm extends JDialog {
              JOptionPane.showMessageDialog(this,"confirm password does not match","try again",JOptionPane.ERROR_MESSAGE);
              return;
          }
-       addUserToDatbase(name,email,phone,address,password);
+      user= addUserToDatbase(name,email,phone,address,password);
+         if(user!=null){
+             dispose();
+         }
+         else{
+             JOptionPane.showMessageDialog(this,"fail to enter new user","try again",JOptionPane.ERROR_MESSAGE);
+             
+         }
     }
-
+public User user;
     private User addUserToDatbase(String name, String email, String phone, String address, String password) {
         User user=null;
         return user;
